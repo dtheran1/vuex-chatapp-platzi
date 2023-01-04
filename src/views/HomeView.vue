@@ -4,7 +4,7 @@
   import ProfileCard from '@/components/ProfileCard.vue';
   import ChatItem from '@/components/ChatItem.vue';
   // import store from '../store/store'
-  import { mapState } from 'vuex';
+  import { mapState, mapGetters } from 'vuex';
 
   export default {
     components: {
@@ -35,6 +35,7 @@
     },
     computed: {
       ...mapState(['username']),
+      ...mapGetters(['firstName'])
     },
   };
 </script>
@@ -45,7 +46,7 @@
       <InputSearch v-model="search" />
       <ProfileCard
         :avatar="profile.avatar"
-        :username="username"
+        :username="firstName(' ')"
         :status="profile.status"
       />
       <RouterLink to="/" class="channels-title"
