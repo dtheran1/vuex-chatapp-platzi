@@ -2,13 +2,18 @@ import { createStore } from 'vuex'
 
 const store = createStore({
   state() {
-    return{
+    return {
       username: 'Daniel.State'
     }
   },
   getters: {
-    firstName : (state) => (c) => {
+    firstName: (state) => (c) => {
       return state.username.split('').join(c)
+    }
+  },
+  mutations: {
+    updateUsername(state, payload) {
+      state.username = payload
     }
   }
 })
