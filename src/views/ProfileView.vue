@@ -25,7 +25,7 @@
         :value="username"
         @input="updateUsername($event.target.value)"
       />
-      <button>Acceder</button>
+      <button @click="$router.push('/')">Acceder</button>
     </div>
   </div>
 </template>
