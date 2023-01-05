@@ -15,6 +15,11 @@ const store = createStore({
     updateUsername(state, payload) {
       state.username = payload
     }
+  },
+  actions: {//aqui podemos invocar mutations con el commit
+    updateUsername({ commit, state }, payload) {
+      commit('updateUsername', payload)
+    }
   }
 })
 
