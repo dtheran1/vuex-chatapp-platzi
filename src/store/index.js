@@ -1,4 +1,6 @@
 import { createStore } from 'vuex'
+import { getUser } from '../api/index'
+import { COMMIT_UPDATE_USERNAME } from '../common/mutation-types'
 
 const store = createStore({
   state() {
@@ -12,13 +14,14 @@ const store = createStore({
     }
   },
   mutations: {
-    updateUsername(state, payload) {
+    [COMMIT_UPDATE_USERNAME](state, payload) {
       state.username = payload
     }
   },
   actions: {//aqui podemos invocar mutations con el commit
-    updateUsername({ commit, state }, payload) {
-      commit('updateUsername', payload)
+    async updateUsername({ commit, state }, payload) {
+      const user = await getUser(1)
+      commit(COMMIT_UPDATE_USERNAME, user.username)
     }
   }
 })
