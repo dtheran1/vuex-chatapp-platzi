@@ -7,11 +7,11 @@
     },
     computed: {
       ...mapState({
-        username: (state) => state.profile.username, 
+        username: (state) => state.profile.username,
       }),
     },
     methods: {
-      ...mapActions(['updateUsername']),
+      ...mapActions('profile', ['updateUsername']),
     },
   };
 </script>

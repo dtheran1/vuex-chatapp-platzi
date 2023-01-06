@@ -4,7 +4,7 @@
   import ProfileCard from '@/components/ProfileCard.vue';
   import ChatItem from '@/components/ChatItem.vue';
   // import store from '../store/store'
-  import { mapState, mapGetters } from 'vuex';
+  import { mapState ,mapGetters } from 'vuex';
 
   export default {
     components: {
@@ -20,7 +20,6 @@
         search: '',
         profile: {
           username: 'Diana Nerd',
-          status: 'active',
           avatar: '/avatars/avatar.jpg',
         },
         channels: [
@@ -34,8 +33,8 @@
       };
     },
     computed: {
-      ...mapState(['username']),
-      ...mapGetters(['firstName'])
+      ...mapState(['status']),
+      ...mapGetters('profile', ['firstName'])
     },
   };
 </script>
@@ -47,7 +46,7 @@
       <ProfileCard
         :avatar="profile.avatar"
         :username="firstName(' ')"
-        :status="profile.status"
+        :status="status"
       />
       <RouterLink to="/" class="channels-title"
         >Canales <Icon icon="carbon:hashtag"

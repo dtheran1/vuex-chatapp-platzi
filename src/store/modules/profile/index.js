@@ -1,10 +1,11 @@
-import { COMMIT_UPDATE_USERNAME } from '@/common/mutation-types';
+import { COMMIT_UPDATE_USERNAME, COMMIT_SET_STATUS } from '@/common/mutation-types';
 import { getUser } from '@/api'
 
 const module = {
+  namespaced: true,
   state() {
     return {
-      username: 'Daniel Theran'
+      username: ''
     }
   },
   getters: {
@@ -18,9 +19,12 @@ const module = {
     }
   },
   actions: {//aqui podemos invocar mutations con el commit
-    async updateUsername({ commit, state }, payload) {
+    async updateUsername({ commit, state, rootState }, payload) {
       const user = await getUser(1)
-      console.log(user);
+      console.log(rootState.status);
+      if (state.username) {
+        commit(COMMIT_SET_STATUS, 'active', { root: true })//root: true es para enviarlo al state raiz
+      }
       commit(COMMIT_UPDATE_USERNAME, user.username)
     }
   },
