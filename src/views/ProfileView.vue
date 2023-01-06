@@ -6,7 +6,9 @@
       return {};
     },
     computed: {
-      ...mapState(['username']),
+      ...mapState({
+        username: (state) => state.profile.username, 
+      }),
     },
     methods: {
       ...mapActions(['updateUsername']),
