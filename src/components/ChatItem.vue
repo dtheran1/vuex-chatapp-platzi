@@ -4,7 +4,7 @@ defineProps(['id', 'name', 'messages'])
 </script>
 
 <template>
-  <RouterLink 
+  <RouterLink
     :to="`${id}`"
     class="chat-item"
   >

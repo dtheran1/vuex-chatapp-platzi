@@ -21,11 +21,10 @@ const module = {
   actions: {//aqui podemos invocar mutations con el commit
     async updateUsername({ commit, state, rootState }, payload) {
       const user = await getUser(1)
-      console.log(rootState.status);
+      commit(COMMIT_UPDATE_USERNAME, user.username)
       if (state.username) {
         commit(COMMIT_SET_STATUS, 'active', { root: true })//root: true es para enviarlo al state raiz
       }
-      commit(COMMIT_UPDATE_USERNAME, user.username)
     }
   },
 }
