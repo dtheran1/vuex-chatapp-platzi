@@ -5,7 +5,13 @@ const module = {
   namespaced: true,
   state() {
     return {
-      username: ''
+      id: 1,
+      username: '',
+      details: {
+        id: 1,
+        name: 'Daniel Theran',
+        avatar: 'https://scontent.fbaq1-1.fna.fbcdn.net/v/t1.6435-9/118572605_10216687337992247_4409357028681710099_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFBxeLVhyUCRFRmUdwujMRO8t9El4Ms8Jzy30SXgyzwnPBMv22ms9i6FdAiZbVwjes&_nc_ohc=nKzKazw5ausAX9odLnU&_nc_ht=scontent.fbaq1-1.fna&oh=00_AfD3Y0DNH9wb_bIHCbotQFY-5yfME4y1W3vPigYFfjwYjg&oe=63E621F7'
+      }
     }
   },
   getters: {
