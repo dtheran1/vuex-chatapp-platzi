@@ -19,7 +19,7 @@
 <template>
   <div class="profile">
     <div class="box">
-      <img src="/avatars/avatar.jpg" alt="avatar" />
+      <img src="https://scontent.fbaq1-1.fna.fbcdn.net/v/t1.6435-9/118572605_10216687337992247_4409357028681710099_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFBxeLVhyUCRFRmUdwujMRO8t9El4Ms8Jzy30SXgyzwnPBMv22ms9i6FdAiZbVwjes&_nc_ohc=qYg6WwrU9CUAX9o8aFX&_nc_ht=scontent.fbaq1-1.fna&oh=00_AfAhx_hbbaSZCcy8PsH8wO6aJeToOPPPZhug9Bqb3oSvXQ&oe=646F7637" alt="avatar" />
       <label for="username">Nombre de usuario</label>
       <input
         type="text"
